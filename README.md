@@ -1,12 +1,12 @@
-Sauce Labs My Demo App – Mobile Automation Testing (Android + iOS)
-This repository contains end-to-end automated tests for the Sauce Labs My Demo App
+Sauce Labs My Demo App – Mobile Automation Testing IOS
+This branch contains end-to-end automated tests for the Sauce Labs My Demo App
 
 The framework is built using:
 Python 3 + Pytest (test runner)
 Appium (mobile automation)
 Page Object Model (POM) (maintainable test design)
 JSON locators (stable element management)
-Allure & Pytest-HTML (reporting with screenshots on failure)
+Pytest-HTML (reporting with screenshots on failure)
 
 Features Automated
 Login Page
@@ -32,11 +32,6 @@ pip install -r requirements.txt
 3. Install & Run Appium
 npm install -g appium
 appium --allow-cors
-
-
-
-Open Android Studio → AVD Manager → Create emulator (Pixel, Android 13)
-Or connect a real Android device (enable USB Debugging)
 
 Running on iOS
 1. Prerequisites
