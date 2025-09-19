@@ -1,0 +1,43 @@
+{
+  "user_field": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/nameET"
+  },
+  "password": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/passwordET"
+  },
+  "login_button": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/loginBtn"
+  },
+  "error_msg": {
+    "by": "id",
+    "value": ["com.saucelabs.mydemoapp.android:id/nameErrorTV", "com.saucelabs.mydemoapp.android:id/passwordErrorTV"]
+  },
+  "hamburger_menu": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/menuIV"
+  },
+  "login_menu": {
+    "by": "accessibility_id",
+    "value": "Login Menu Item"
+  },
+  "logout_bar":{
+    "by": "accessibility_id",
+    "value": "Logout Menu Item"
+  },
+  "logout_alert": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/alertTitle"
+  },
+  "click_logout": {
+    "by": "id",
+    "value":"android:id/button1"
+  },
+  "login_title": {
+    "by":"id",
+    "value": "com.saucelabs.mydemoapp.android:id/loginTV"
+  }
+}
+

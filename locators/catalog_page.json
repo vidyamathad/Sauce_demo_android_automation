@@ -1,0 +1,74 @@
+{
+  "catalog": {
+    "by": "xpath",
+    "value": "(//android.widget.ImageView[@content-desc='Product Image'])[1]"
+  },
+  "product_name": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/productTV"
+  },
+  "txt_highlight_product": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/productHeightLightsTV"
+  },
+  "product_details": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/descTV"
+  },
+  "sort": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/sortIV"
+  },
+  "sort_price_descending": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/priceDesCL"
+  },
+  "product_list_prices": {
+    "by": "resource-id",
+    "value": "com.saucelabs.mydemoapp.android:id/priceTV"
+  },
+  "logout_alert": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/alertTitle"
+  },
+  "click_logout": {
+    "by": "id",
+    "value": "android:id/button1"
+  },
+  "login_title": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/loginTV"
+  },
+  "product_price": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/priceTV"
+  },
+  "add_to_cart_button": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/cartBt"
+  },
+  "cart_icon": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/cartIV"
+  },
+  "cart_item_name": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/titleTV"
+  },
+  "sort_price_asc": {
+    "by": "xpath",
+    "value": "//android.widget.TextView[normalize-space(@text)='Price - Ascending']"
+  },
+  "cart_item_price": {
+    "by": "id",
+    "value": "com.saucelabs.mydemoapp.android:id/priceTV"
+  },
+  "sort_name_asc": {
+    "by": "xpath",
+    "value": "//android.widget.TextView[normalize-space(@text)='Name - Ascending']"
+  },
+  "sort_name_desc": {
+    "by": "xpath",
+    "value": "//android.widget.TextView[normalize-space(@text)='Name - Descending']"
+  }
+}
