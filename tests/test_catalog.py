@@ -44,3 +44,21 @@ class TestCatalog:
         catalog.sort_by_price_desc()
         prices = catalog.get_all_prices()
         assert prices == sorted(prices, reverse=True), "Products should be sorted by price descending"
+
+    def test_open_product_details_negative_name(self, logged_in_driver):
+        catalog = CatalogPage(logged_in_driver)
+        catalog.open_first_product()
+        name, price = catalog.get_product_details()
+        assert name == "NonExistingProduct", "This test should fail: Product name does not match expected"
+
+    def test_add_product_to_cart_negative_price_format(self, logged_in_driver):
+        catalog = CatalogPage(logged_in_driver)
+        catalog.open_first_product()
+        product_name, product_price = catalog.get_product_details()
+        catalog.add_to_cart()
+        catalog.open_cart()
+        cart_name, cart_price = catalog.get_cart_item_details()
+
+        assert "$" not in cart_price, "This test should fail: Cart price contains $ sign"
+
+

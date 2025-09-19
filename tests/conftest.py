@@ -20,6 +20,23 @@ def logged_in_driver(driver):
     login_page = LoginPage(driver)
     login_page.login(credentials["valid"]["username"], credentials["valid"]["password"])
     return driver
+import subprocess
+
+def save_logcat(test_name):
+    """Capture logcat logs for debugging"""
+    log_dir = "logs"
+    os.makedirs(log_dir, exist_ok=True)
+    file_name = f"{test_name}.log"
+    path = os.path.join(log_dir, file_name)
+
+    with open(path, "w", encoding="utf-8") as f:
+        subprocess.run(["adb", "logcat", "-d"], stdout=f, stderr=subprocess.STDOUT)
+
+    # Clear logcat after saving, so next test starts fresh
+    subprocess.run(["adb", "logcat", "-c"])
+    print(f"\nLogcat saved to {path}")
+    return path
+
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
@@ -27,20 +44,26 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
 
     if rep.when == "call" and rep.failed:
-        # Look for any fixture that is a WebDriver
         driver = None
         for fixture_value in item.funcargs.values():
             if hasattr(fixture_value, "save_screenshot"):
                 driver = fixture_value
                 break
 
+        test_name = rep.nodeid.replace("::", "_").replace("/", "_")
+
+        # Save screenshot
         if driver:
             screenshot_dir = "screenshots"
             os.makedirs(screenshot_dir, exist_ok=True)
-            file_name = f"{rep.nodeid.replace('::', '_').replace('/', '_')}.png"
-            path = os.path.join(screenshot_dir, file_name)
-            driver.save_screenshot(path)
-            print(f"\nScreenshot saved to {path}")
+            screenshot_path = os.path.join(screenshot_dir, f"{test_name}.png")
+            driver.save_screenshot(screenshot_path)
+            print(f"\nScreenshot saved to {screenshot_path}")
+
+        # Save logcat
+        save_logcat(test_name)
+
+
 
 def pytest_addoption(parser):
     parser.addoption("--platform", action="store", default="android")
