@@ -35,7 +35,7 @@ caps = {
     "platformName": "Android",
     "appium:automationName": "UiAutomator2",
     "appium:deviceName": "emulator-5554",
-    "appium:platformVersion": "13",
+    "appium:platformVersion": "14",
     "appium:app": "<path-to-apk>/my-demo-app.apk"
 }
 
@@ -56,4 +56,5 @@ Allure Report → Interactive dashboard with steps, logs, and screenshots
 
 Example command:
 pytest -v --html=reports/report.html --self-contained-html --alluredir=reports/allure-results
+
 
