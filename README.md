@@ -38,28 +38,24 @@ appium --allow-cors
 Open Android Studio → AVD Manager → Create emulator (Pixel, Android 13)
 Or connect a real Android device (enable USB Debugging)
 
- Running on iOS
+Running on iOS
 1. Prerequisites
-macOS with Xcode installed
-CocoaPods installed (brew install cocoapods)
-Appium drivers:
 appium driver install xcuitest
-iOS simulator (e.g., iPhone 14, iOS 16)
+iOS simulator
 
 2. Configure Desired Capabilities (iOS)
 caps = {
     "platformName": "iOS",
     "appium:automationName": "XCUITest",
-    "appium:deviceName": "iPhone 14",     # or your simulator/device
-    "appium:platformVersion": "16.0",
-    "appium:app": "<path-to-app>/MyDemoApp.ipa"   # or .app file
+    "appium:deviceName": "iPhone 15", 
+    "appium:platformVersion": "18.7",
+    "appium:app": "<path-to-app>/MyDemoApp.ipa"
 }
 
-Run all tests:
+for runing all tests:
 pytest -v
-Run Android tests only:
-pytest -v --platform=android
-Run iOS tests only:
+
+for runing iOS tests only:
 pytest -v --platform=ios
 
 
