@@ -1,9 +1,9 @@
 Sauce Labs My Demo App – Android Automation Testing.
-This repository contains end-to-end automated tests for the Sauce Labs My Demo App (Android)
+This branch contains end-to-end automated tests for the Sauce Labs My Demo App (Android)
 The framework is built using:
-Python 3 + Pytest (test runner)
-Appium (mobile automation)
-Page Object Model (POM) (maintainable test design)
+Python 3 + Pytest
+Appium
+Page Object Model (POM)
 JSON locators (stable element management)
 Allure & Pytest-HTML (reporting with screenshots on failure)
 
@@ -45,7 +45,6 @@ pytest -v
 Run with HTML report:
 pytest -v --html=reports/report.html --self-contained-html
 
-
 Run with Allure report:
 pytest -v --alluredir=reports/allure-results
 allure serve reports/allure-results
@@ -54,7 +53,8 @@ Reports
 Pytest-HTML → Generates report.html with pass/fail percentage and error logs
 Allure Report → Interactive dashboard with steps, logs, and screenshots
 
-Example command:
+command:
 pytest -v --html=reports/report.html --self-contained-html --alluredir=reports/allure-results
+
 
 
