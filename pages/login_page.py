@@ -1,0 +1,45 @@
+from appium.webdriver.common.appiumby import AppiumBy
+from lib.json_reader import load_json
+from lib.waits import wait_for_element, wait_and_click
+import os
+
+locators = load_json(os.path.join("locators", "login_page.json"))
+
+def by_mapper(locator_type):
+    mapping = {
+        "id": AppiumBy.ID,
+        "xpath": AppiumBy.XPATH,
+        "accessibility_id": AppiumBy.ACCESSIBILITY_ID,
+        "class_name": AppiumBy.CLASS_NAME
+    }
+    return mapping[locator_type]
+
+class LoginPage:
+    def __init__(self, driver):
+        self.driver = driver
+
+    def login(self, username, password):
+        wait_and_click(self.driver, locators["hamburger_menu"]["value"], by_mapper(locators["hamburger_menu"]["by"]))
+        wait_and_click(self.driver, locators["login_menu"]["value"], by_mapper(locators["login_menu"]["by"]))
+
+        wait_for_element(self.driver, locators["user_field"]["value"], by_mapper(locators["user_field"]["by"])).send_keys(username)
+        wait_for_element(self.driver, locators["password"]["value"], by_mapper(locators["password"]["by"])).send_keys(password)
+
+        wait_and_click(self.driver, locators["login_button"]["value"], by_mapper(locators["login_button"]["by"]))
+
+    def logout(self):
+        wait_and_click(self.driver, locators["hamburger_menu"]["value"], by_mapper(locators["hamburger_menu"]["by"]))
+        wait_and_click(self.driver, locators["logout_bar"]["value"], by_mapper(locators["logout_bar"]["by"]))
+        wait_and_click(self.driver, locators["logout_alert"]["value"], by_mapper(locators["logout_alert"]["by"]))
+        wait_and_click(self.driver, locators["click_logout"]["value"], by_mapper(locators["click_logout"]["by"]))
+
+    def get_error_messages(self):
+        errors = []
+        for value in locators["error_msg"]["value"]:
+            try:
+                element = self.driver.find_element(by_mapper(locators["error_msg"]["by"]), value)
+                if element.is_displayed():
+                    errors.append(element.text)
+            except Exception:
+                pass
+        return errors
