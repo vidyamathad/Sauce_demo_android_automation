@@ -1,0 +1,42 @@
+{
+ "user_field": {
+  "by": "xpath",
+  "value": "(//XCUIElementTypeTextField)[1]"
+  },
+  "password": {
+    "by": "xpath",
+    "value": "(//XCUIElementTypeTextField)[2]"
+  },
+  "login_button": {
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='Login']"
+  },
+  "error_msg": {
+    "by": "accessibility_id",
+    "value": ["login_username_error", "login_password_error"]
+  },
+  "hamburger_menu": {
+    "by": "accessibility_id",
+    "value": "Menu Icons"
+  },
+  "login_menu": {
+    "by": "accessibility_id",
+    "value": "LogOut-menu-item"
+  },
+  "logout_bar": {
+    "by": "accessibility_id",
+    "value": "logout_menu_item"
+  },
+  "logout_alert": {
+    "by": "accessibility_id",
+    "value": "logout_alert_title"
+  },
+  "click_logout": {
+    "by": "accessibility_id",
+    "value": "logout_button"
+  },
+  "login_title": {
+    "by": "accessibility_id",
+    "value": "login_title"
+  }
+}

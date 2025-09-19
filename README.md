@@ -1,1 +1,0 @@
-# Sauce_demo_android_automation

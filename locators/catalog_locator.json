@@ -1,0 +1,14 @@
+{
+  "catalog": {"by": "accessibility_id", "value": "Product Image 1"},
+  "product_name": {"by": "accessibility_id", "value": "ProductTitle"},
+  "product_price": {"by": "accessibility_id", "value": "ProductPrice"},
+  "add_to_cart_button": {"by": "accessibility_id", "value": "AddToCart"},
+  "cart_icon": {"by": "accessibility_id", "value": "Cart"},
+  "cart_item_name": {"by": "accessibility_id", "value": "CartItemTitle"},
+  "cart_item_price": {"by": "accessibility_id", "value": "CartItemPrice"},
+  "sort": {"by": "accessibility_id", "value": "SortButton"},
+  "sort_name_asc": {"by": "accessibility_id", "value": "NameAsc"},
+  "sort_name_desc": {"by": "accessibility_id", "value": "NameDesc"},
+  "sort_price_asc": {"by": "accessibility_id", "value": "PriceAsc"},
+  "sort_price_descending": {"by": "accessibility_id", "value": "PriceDesc"}
+}
