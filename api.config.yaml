@@ -1,0 +1,9 @@
+rest-url: 'https://api.us-west-1.saucelabs.com/rest/v1'
+user: 'oauth-vidyamathad25-0c446'
+api-key: 'ae132779-9584-41fc-be88-f61d2a5d57c2'
+vm-version: 'v2alpha'
+tunnel-identifier: 'my_sauce_tunnel'
+
+app:
+  - path: MyDemoAppRN.ipa
+

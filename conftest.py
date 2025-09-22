@@ -1,19 +1,32 @@
-import os
 import pytest
+import os
 from libs.driver_factory import create_driver
-from dotenv import load_dotenv
 
-# Load global environment variables
-load_dotenv()
-SAUCE_USERNAME = os.getenv("SAUCE_USERNAME")
-SAUCE_ACCESS_KEY = os.getenv("SAUCE_ACCESS_KEY")
-
-@pytest.fixture(scope="session")
+@pytest.fixture
 def driver(request):
-    platform = request.config.getoption("--platform")
+    platform = request.config.getoption("--platform")  # get CLI value
     cloud = request.config.getoption("--cloud")
-    return create_driver(platform, cloud, SAUCE_USERNAME, SAUCE_ACCESS_KEY)
+    username = os.getenv("SAUCE_USERNAME")
+    access_key = os.getenv("SAUCE_ACCESS_KEY")
+
+    driver = create_driver(platform=platform, cloud=cloud, username=username, access_key=access_key)
+    yield driver
+    driver.quit()
+
 
 def pytest_addoption(parser):
-    parser.addoption("--platform", action="store", default="android")
-    parser.addoption("--cloud", action="store", default="sauce")
+    group = parser.getgroup("custom")  # optional group
+    group.addoption(
+        "--platform",
+        action="store",
+        default="ios",
+        help="Platform to run tests on: ios or android"
+    )
+    group.addoption(
+        "--cloud",
+        action="store",
+        default="sauce",
+        help="Cloud to run tests on: sauce or local"
+    )
+
+

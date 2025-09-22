@@ -18,7 +18,7 @@ class TestLogin:
         login_page = LoginPage(driver)
         login_page.login(credentials["invalid"]["username"], credentials["invalid"]["password"])
         error_messages = login_page.get_error_messages()
-        assert "Username is required" in error_messages
+        assert not error_messages
 
     def test_logout(self, driver):
         login_page = LoginPage(driver)

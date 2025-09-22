@@ -12,31 +12,31 @@
     "value": "//XCUIElementTypeButton[@name='Login']"
   },
   "error_msg": {
-    "by": "accessibility_id",
-    "value": ["login_username_error", "login_password_error"]
+    "by": "xpath",
+    "value": "//XCUIElementTypeSecureTextField"
   },
   "hamburger_menu": {
-    "by": "accessibility_id",
-    "value": "Menu Icons"
+    "by": "xpath",
+    "value": "(//XCUIElementTypeImage[@name='Product Image'])[6]"
   },
-  "login_menu": {
-    "by": "accessibility_id",
-    "value": "LogOut-menu-item"
+ "ok_button":{
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='OK']"
   },
   "logout_bar": {
-    "by": "accessibility_id",
-    "value": "logout_menu_item"
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='Logout']"
   },
   "logout_alert": {
-    "by": "accessibility_id",
-    "value": "logout_alert_title"
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='logout_alert']"
   },
   "click_logout": {
-    "by": "accessibility_id",
-    "value": "logout_button"
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='logout_button']"
   },
   "login_title": {
-    "by": "accessibility_id",
-    "value": "login_title"
+    "by": "xpath",
+    "value": "//XCUIElementTypeButton[@name='title']"
   }
 }

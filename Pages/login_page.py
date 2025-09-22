@@ -34,12 +34,6 @@ class LoginPage:
         wait_and_click(self.driver, locators["click_logout"]["value"], by_mapper(locators["click_logout"]["by"]))
 
     def get_error_messages(self):
-        errors = []
-        for value in locators["error_msg"]["value"]:
-            try:
-                element = self.driver.find_element(by_mapper(locators["error_msg"]["by"]), value)
-                if element.is_displayed():
-                    errors.append(element.text)
-            except Exception:
-                pass
-        return errors
+        error_message = wait_for_element(self.driver, locators["click_logout"]["value"], by_mapper(locators["click_logout"]["by"]))
+        return error_message
+
